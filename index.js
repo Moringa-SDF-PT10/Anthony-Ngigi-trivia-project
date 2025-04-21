@@ -2,9 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // --- Getting references to important HTML elements  ---
-    const startScreen = document.getElementById('start-screen');
-    const quizScreen = document.getElementById('quiz-screen');
-    const resultsScreen = document.getElementById('results-screen');
+
 
     const startBtn = document.getElementById('start-btn');
     const restartBtn = document.getElementById('restart-btn');
@@ -158,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
      }
 
 
-    
+
 
     // Function to display the current question and answers
     function displayCurrentQuestion() {
@@ -267,8 +265,8 @@ document.addEventListener('DOMContentLoaded', function() {
         return textArea.value;
     }
 
-    // --- Initial Setup ---
+
     // Use the showScreen function to ensure only the start screen is visible initially
     showScreen('start-screen');
 
-}); // End of DOMContentLoaded
+});
