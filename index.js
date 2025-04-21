@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const feedbackEl = document.getElementById('feedback');
     const scoreEl = document.getElementById('score');
 
-    // --- Quiz variables (use let for variables that change) ---
+    // --- Quiz variables  ---
     let questions = []; // To store questions from API
     let currentQuestionIndex = 0; // Track which question we are on
     let score = 0; // Track the user's score
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(configForm); // Read data from the form
         const params = new URLSearchParams();
 
-        // Get number of questions, default to 10 if invalid or not provided
-        let amount = parseInt(formData.get('amount')) || 10;
+        // Get number of questions, defaults to 5 if invalid or not provided
+        let amount = parseInt(formData.get('amount')) || 5;
         params.append('amount', Math.max(1, Math.min(amount, 50))); // Ensure amount is valid
 
         // Append other optional parameters if they have a value
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
         feedbackEl.className = '';
 
         // Fetch questions from the API - NOW USES buildApiUrl()
-        const apiUrl = buildApiUrl(); // <<<<<< CHANGED: Get URL dynamically
+        const apiUrl = buildApiUrl(); // << CHANGED: Get URL dynamically
 
         console.log("Fetching questions from:", apiUrl);
 
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
      }
 
 
-    // --- More Helper Functions ---
+    
 
     // Function to display the current question and answers
     function displayCurrentQuestion() {
